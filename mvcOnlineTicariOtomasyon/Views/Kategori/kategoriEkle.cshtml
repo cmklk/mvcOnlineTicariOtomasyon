@@ -1,0 +1,23 @@
+﻿@model mvcOnlineTicariOtomasyon.Models.siniflar.kategori
+@{
+    ViewBag.Title = "kategoriEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="mt-4">Yeni Kateogri Sayfası</h2>
+
+@using (Html.BeginForm("kategoriEkle", "Kategori", FormMethod.Post))
+{ 
+<div>
+    <br />
+     <h6>KATEGORİ AD</h6>
+    @Html.TextBoxFor(x => x.kategoriAd, new { @class = "form-control" })
+</div>
+    <br />
+    <div>
+        <button class="btn btn-success">KATEGORİ EKLE <i class="bi bi-file-plus"></i></button>
+    </div>
+}
+
+
+

@@ -1,0 +1,69 @@
+﻿@model mvcOnlineTicariOtomasyon.Models.siniflar.urunler
+@{
+    ViewBag.Title = "urunGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("urunGuncelle", "Urun", FormMethod.Post))
+{
+    <br />
+    <div>
+        @Html.LabelFor(x => x.Urunid)
+        @Html.TextBoxFor(x => x.Urunid, new { @class = "form-control" })
+    </div>
+    <br />
+
+    <div>
+        @Html.LabelFor(x => x.UrunAd)
+        @Html.TextBoxFor(x => x.UrunAd, new { @class = "form-control" })
+    </div>
+    <br />
+
+    <div>
+        @Html.LabelFor(x => x.Marka)
+        @Html.TextBoxFor(x => x.Marka, new { @class = "form-control" })
+    </div>
+  
+    <br />
+    <div>
+        @Html.LabelFor(x => x.Stok)
+        @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
+    </div>
+    <br />
+
+    
+    <div>
+        @Html.LabelFor(x => x.AlisFiyat)
+        @Html.TextBoxFor(x => x.AlisFiyat, new { @class = "form-control" })
+    </div>
+    <br />
+
+
+    <div>
+        @Html.LabelFor(x => x.SatisFiyat)
+        @Html.TextBoxFor(x => x.SatisFiyat, new { @class = "form-control" })
+    </div>
+  
+    <br />
+    <div>
+        @Html.LabelFor(x => x.UrunGorsel)
+        @Html.TextBoxFor(x => x.UrunGorsel, new { @class = "form-control" })
+    </div>
+    <br />
+
+
+    <div>
+        @Html.LabelFor(x => x.kategori.kategoriID)
+        @Html.DropDownListFor(x => x.Kategoriid,(List<SelectListItem>)@ViewBag.dgr, new { @class = "form-control" })
+    </div>
+    <br />
+
+
+
+    <button class="btn btn-warning btn-lg text-white">ÜRÜN BİLGİLERİNİ GÜNCELLE</button>
+
+
+
+
+}
+

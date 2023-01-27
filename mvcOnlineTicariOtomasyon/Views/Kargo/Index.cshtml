@@ -1,0 +1,42 @@
+﻿@using mvcOnlineTicariOtomasyon.Models.siniflar
+@model List<kargoDetay>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="my-4">
+    @using (Html.BeginForm("Index", "Kargo", FormMethod.Get))
+    {
+        <span>KARGO TAKİP NUMARASI :</span> @Html.TextBox("p")
+        <button class="btn btn-primary">Ara</button>
+    }
+
+</div>
+
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>PERSONEL</th>
+            <th>ALICI</th>
+            <th>TARİH</th>
+            <th>TAKİP KOD</th>
+            <th>DETAY</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.personel</td>
+                <td>@x.alici</td>
+                <td>@Convert.ToDateTime(x.tarih).ToString("dd-MM-yyyy")</td>
+                <td>@x.takipKodu</td>
+                <td><a href="~/Kargo/kargoTakipDetay/@x.takipKodu" class="btn btn-danger">DETAYLAR</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="~/Kargo/yeniKargo" class="btn btn-primary">YENİ KARGO EKLE <i class="bi bi-plus"></i></a>

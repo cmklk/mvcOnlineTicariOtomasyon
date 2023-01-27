@@ -1,0 +1,37 @@
+﻿@using mvcOnlineTicariOtomasyon.Models.siniflar
+@model List<mesajlar>
+
+<div class="post">
+    @foreach (var x in Model)
+    {
+        <div class="user-block">
+
+            <img class="img-circle img-bordered-sm" src="~/image/envelope.png" alt="user image">
+
+            <span class="username">
+
+                <a href="#">@x.gonderici</a>
+
+                <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
+
+            </span>
+
+            <span class="description">@Convert.ToDateTime(x.tarih).ToString("dd-MM-yyyy")</span>
+
+        </div>
+
+        <!-- /.user-block -->
+
+        <p>
+
+            @x.icerik
+
+        </p>
+        <br />
+
+    }
+
+
+
+
+</div>

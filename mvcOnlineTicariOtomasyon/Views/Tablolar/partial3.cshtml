@@ -1,0 +1,28 @@
+﻿@using mvcOnlineTicariOtomasyon.Models.siniflar
+
+@model List<Cariler>
+    <h3 class="fs-1 mt-4 text-danger">CARİ TABLOSU</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>AD</th>
+            <th>SOYAD</th>
+            <th>ŞEHİR</th>
+        
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach(var x in Model)
+        {
+            <tr>
+                <td>@x.Cariid</td>
+                <td>@x.CariAd</td>
+                <td>@x.CariSoyad</td>
+                <td>@x.CariSehir</td>
+               
+            </tr>
+        }
+    </tbody>
+</table>

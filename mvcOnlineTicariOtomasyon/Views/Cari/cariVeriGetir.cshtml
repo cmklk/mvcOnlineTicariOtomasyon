@@ -1,0 +1,33 @@
+﻿@model mvcOnlineTicariOtomasyon.Models.siniflar.Cariler
+@{
+    ViewBag.Title = "cariVeriGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="my-4">CARİ BİLGİLERİ</h2>
+
+@using (Html.BeginForm("cariGuncelle", "Cari", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.Cariid)
+    @Html.TextBoxFor(x => x.Cariid, new { @class = "form-control" })
+
+    <br />
+
+    @Html.LabelFor(x => x.CariAd)
+    @Html.TextBoxFor(x => x.CariAd, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CariAd, "", new { @style = "color:red;" })
+    <br />
+    @Html.LabelFor(x => x.CariSoyad)
+    @Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CariAd, "", new { @style = "color:red;" })
+    <br />
+    @Html.LabelFor(x => x.CariSehir)
+    @Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CariSehir, "", new { @style = "color:red;" })
+    <br />
+    @Html.LabelFor(x => x.Mail)
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CariAd, "", new { @style = "color:red;" })
+    <br />
+    <button class="btn btn-warning text-white">CARİR BİLGİLERİNİ GÜNCELLE</button>
+}

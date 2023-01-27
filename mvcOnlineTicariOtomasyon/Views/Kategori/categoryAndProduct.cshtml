@@ -1,0 +1,62 @@
+﻿@model mvcOnlineTicariOtomasyon.Models.siniflar.cascading
+@{
+    ViewBag.Title = "categoryAndProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>KATEGORİ ÜRÜN İŞLEMLERİ</h2>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+<script>
+
+    $(function () {
+
+        $('#DrpKategori').change(function () {
+
+            var id = $('#DrpKategori').val();
+
+            $.ajax({
+
+                url: '/Kategori/urunGetir',
+
+                data: { p: id },
+
+                type: "POST",
+
+                dataType: "Json",
+
+                success: function (data) {
+
+                    console.log(data);
+
+                    $('#DrpUrunler').empty();
+
+                    for (var i = 0; i < data.length; i++) {
+
+                        $('#DrpUrunler').append("<option value='" + data[i].Value + "'>" + data[i].Text + "</Option>");
+
+                    }
+
+                }
+
+            });
+
+        });
+
+    });
+
+</script>
+
+
+
+
+
+<div>
+    @Html.Label("Kategoriler")
+    @Html.DropDownList("DrpKategori",Model.kategoriler,"------KATEGORİ SEÇİNİZ------", new { @class="form-control"})
+
+    <br />
+
+    @Html.Label("Ürünler")
+    @Html.DropDownList("DrpUrunler",Model.urunler,"------URUN SEÇİNİZ------", new { @class="form-control"})
+</div>

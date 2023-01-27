@@ -1,0 +1,51 @@
+﻿@using mvcOnlineTicariOtomasyon.Models.siniflar
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Cariler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="my-4">CARİ LİSTESİ</h2>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>CARİ ID</th>
+            <th>CARİ AD</th>
+            <th>CARİ SOYAD</th>
+            <th>CARİ ŞEHİR</th>
+            <th>CARİ MAİL</th>
+            <th>SİL</th>
+            <th>GÜNCELLE</th>
+            <th>SATIŞ GEÇMİŞİ</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var x in Model)
+        {
+        <tr>
+            <td>@x.Cariid</td>
+            <td>@x.CariAd</td>
+            <td>@x.CariSoyad</td>
+            <td>@x.CariSehir</td>
+            <td>@x.Mail</td>
+            <td><a href="/Cari/cariSil/@x.Cariid" class="btn btn-danger">SİL</a></td>
+            <td><a href="/Cari/cariVeriGetir/@x.Cariid" class="btn btn-warning text-white">GÜNCELLE</a></td>
+            <td><a href="/Cari/cariSatisGecmis/@x.Cariid" class="btn btn-primary">SATIŞ GEÇMİŞİ</a></td>
+        </tr>
+        }
+    </tbody>
+
+</table>
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }),
+    new PagedListRenderOptions
+    {
+        LiElementClasses = new List<string>
+        { "page-link"}
+    }
+)
+<a href="/Cari/cariEkle" class="btn btn-primary">YENİ CARİ EKLE</a>
+

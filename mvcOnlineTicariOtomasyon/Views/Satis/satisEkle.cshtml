@@ -1,0 +1,35 @@
+﻿@model mvcOnlineTicariOtomasyon.Models.siniflar.SatisHareket
+@{
+    ViewBag.Title = "satisEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="my-4">SATIŞ EKLEME PANELİ</h2>
+
+
+<form method="post">
+    <label class="form-label">CARİ</label>
+    @Html.DropDownListFor(x => x.cariid, (List<SelectListItem>)@ViewBag.deger1, new { @class = "form-control" })
+    <br />
+
+    <label class="form-label">PERSONEL</label>
+    @Html.DropDownListFor(x => x.personelid, (List<SelectListItem>)@ViewBag.deger2, new { @class = "form-control" })
+    <br />
+
+    <label class="form-label">ÜRÜN</label>
+    @Html.DropDownListFor(x => x.urunid, (List<SelectListItem>)@ViewBag.deger3, new { @class = "form-control" })
+    <br />
+
+    <label class="form-label">ADET</label>
+    @Html.TextBoxFor(x => x.Adet, new { @class = "form-control" })
+    <br />
+
+    <label class="form-label">FİYAT</label>
+    @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+    <br />
+    <label class="form-label">TOPLAM TUTAR</label> 
+    @Html.TextBoxFor(x=>x.ToplamTutar, new { @class="form-control"})
+    <br />
+
+    <button class="btn btn-primary">SATIŞ BİLGİLERİNİ EKLE</button>
+</form>

@@ -1,0 +1,54 @@
+﻿@using mvcOnlineTicariOtomasyon.Models.siniflar
+
+@model List<urunler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2 class="my-4">CARİ LİSTESİ</h2>
+
+
+
+@using(Html.BeginForm("Index", "Urun", FormMethod.Get)){ 
+       <span>Ürün Ara :</span> @Html.TextBox("p")
+         <button class="btn btn-primary">Ara</button>  
+}
+<br />
+<table class="table table-bordered table-hover" >
+    <thead>
+        <tr>
+          
+            <th>ÜRÜN ADI</th>
+            <th>ÜRÜN MARKA</th>
+            <th>STOK</th>
+            <th>ALIŞ FİYAT</th>
+            <th>SATIŞ FİYAT</th>
+            <th>KATEGORİ</th>
+            <th>SİL</th>
+            <th>GÜNCELLE</th>
+            <th>SATIŞ YAP</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach(var x in Model)
+        {
+        <tr>
+
+            <td>@x.UrunAd</td>
+            <td>@x.Marka</td>
+            <td>@x.Stok</td>
+            <td>@x.AlisFiyat ₺</td>
+            <td>@x.SatisFiyat ₺</td>
+            <td>@x.kategori.kategoriAd</td>
+            <td><a href="/Urun/urunSil/@x.Urunid" class="btn btn-danger">SİL <i class="bi bi-trash"></i></a></td>
+            <td><a href="/Urun/urunGetir/@x.Urunid" class="btn btn-success">GÜNCELLE <i class="bi bi-arrow-clockwise"></i></a></td>
+            <td><a href="/Urun/satisYap/@x.Urunid" class="btn text-white" style="background-color:orange;">SATIŞ YAP </a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+
+<a href="/Urun/urunEkle" class="btn btn-primary">YENİ ÜRÜN EKLE</a>
+

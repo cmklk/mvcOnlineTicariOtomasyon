@@ -1,0 +1,29 @@
+﻿@model mvcOnlineTicariOtomasyon.Models.siniflar.personel
+@{
+    ViewBag.Title = "personelEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="my-4">PERSONEL EKLE</h2>
+
+@using (Html.BeginForm("personelEkle", "Personel", FormMethod.Post, new {enctype="multipart/form-data" }))
+{
+
+<form class="form-group" method="post">
+    <label class="col-form-label">AD</label>
+    <input type="text" class="form-control" name="personelAd" />
+    <br />
+
+    <label class="col-form-label">SOYAD</label>
+    <input type="text" class="form-control" name="personelSoyad" />
+    <br />
+    <label class="col-form-label">PERSONEL GÖRSEL</label>
+    <input type="file" class="form-control" name="personelGorsel" />
+    <br />
+    @Html.LabelFor(x => x.departmanid)
+    @Html.DropDownListFor(x => x.departmanid, (List<SelectListItem>)@ViewBag.deger1, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">PERSONEL BİLGİLERİNİ EKLE</button>
+</form>
+}
+

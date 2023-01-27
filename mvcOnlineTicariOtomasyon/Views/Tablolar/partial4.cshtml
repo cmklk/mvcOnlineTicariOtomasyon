@@ -1,0 +1,32 @@
+﻿
+@using mvcOnlineTicariOtomasyon.Models.siniflar
+
+@model List<urunler>
+<h3 class="fs-1 mt-4 text-danger">ÜRÜN TABLOSU</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>ÜRÜN AD</th>
+            <th>STOK</th>
+            <th>MARKA</th>
+            <th>ALIŞ FİYAT</th>
+            <th>SATIŞ FİYAT</th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var x in Model)
+        {
+        <tr>
+            <td>@x.Urunid</td>
+            <td>@x.UrunAd</td>
+            <td>@x.Stok</td>
+            <td>@x.Marka</td>
+            <td>@x.AlisFiyat</td>
+            <td>@x.SatisFiyat</td>
+        </tr>
+        }
+    </tbody>
+</table>

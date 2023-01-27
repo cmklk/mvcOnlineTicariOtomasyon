@@ -1,0 +1,33 @@
+﻿@model mvcOnlineTicariOtomasyon.Models.siniflar.personel
+@{
+    ViewBag.Title = "personelVeriGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="my-4">PERSONEL BİLGİLERİ</h2>
+
+@using (Html.BeginForm("personelGuncelle", "Personel", FormMethod.Post, new {enctype="multipart/form-data" }))
+{
+    @Html.LabelFor(x => x.personelId)
+    @Html.TextBoxFor(x => x.personelId, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(x => x.personelAd)
+    @Html.TextBoxFor(x => x.personelAd, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(x => x.personelSoyad)
+    @Html.TextBoxFor(x => x.personelSoyad, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(x => x.personelGorsel)
+    <input type="file" name="personelGorsel" class="form-control" />
+    <br />
+    @Html.LabelFor(x=>x.departman)
+    @Html.DropDownListFor(x=>x.departmanid ,(List<SelectListItem>)ViewBag.departmanAd,new { @class="form-control"})
+    <br />
+
+    <button class="btn btn-success">PERSONEL BİLGİLERİNİ GÜNCELLE</button>
+    
+}
+

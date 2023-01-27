@@ -1,0 +1,43 @@
+﻿@using mvcOnlineTicariOtomasyon.Models.siniflar
+@model List<personel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="my-4">PERSONELER</h2>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>AD</th>
+            <th>SOYAD</th>
+            <th>GÖRSEL</th>
+            <th>DEPARTMAN</th>
+            <th>SİL</th>
+            <th>GÜNCELLE</th>
+            <th>DETAYLAR</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var x in Model)
+        {
+        <tr>
+            <td>@x.personelId</td>
+            <td>@x.personelAd</td>
+            <td>@x.personelSoyad</td>
+            <td>
+                <img src="@x.personelGorsel" style="height:100px; width:100px"/>
+            </td>
+            <td>@x.departman.DepartmanAd</td>
+            <td><a href="/Personel/PersonelSil/@x.personelId" class="btn btn-danger">SİL</a></td>
+            <td><a href="/Personel/personelVeriGetir/@x.personelId" class="btn btn-warning text-white">GÜNCELLE</a></td>
+            <td><a href="/departman/departmanDetaySatis/@x.personelId" class="btn btn-default text-white" style="background-color:salmon">DETAYLAR</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Personel/personelEkle" class="btn btn-primary">YENİ PERSONEL EKLE</a>
+

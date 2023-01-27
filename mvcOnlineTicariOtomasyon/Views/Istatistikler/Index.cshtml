@@ -1,0 +1,131 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+    .row .kolon{
+        margin:20px 0;
+    }
+</style>
+
+
+<div class="container m-4">
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-6 kolon">
+            <div class="card p-4 bg-dark" >
+                <div class="card-title text-center text-white" style="font-size:20px">TOPLAM CARİ</div>
+                <div class="card-content text-white text-center" style="font-size:30px">@ViewBag.deger1</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6 kolon">
+            <div class="card p-4 bg-warning" >
+                <div class="card-title text-center text-white" style="font-size:20px">ÜRÜN SAYISI</div>
+                <div class="card-content text-white text-center" style="font-size:30px">@ViewBag.deger2</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6 kolon">
+            <div class="card p-4 bg-success" >
+                <div class="card-title text-center text-white" style="font-size:20px">PERSONEL SAYISI</div>
+                <div class="card-content text-white text-center" style="font-size:30px">@ViewBag.deger3</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6 kolon">
+            <div class="card p-4 bg-primary" >
+                <div class="card-title text-center text-white" style="font-size:20px">KATEGORİ  SAYISI</div>
+                <div class="card-content text-white text-center" style="font-size:30px">@ViewBag.deger4</div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-3 col-md-6 col-sm-6 kolon">
+            <div class="card p-4 bg-danger" >
+                <div class="card-title text-center text-white" style="font-size:20px">TOPLAM STOK</div>
+                <div class="card-content text-white text-center" style="font-size:30px">@ViewBag.deger5</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6 kolon">
+            <div class="card p-4 bg-info" >
+                <div class="card-title text-center text-white" style="font-size:20px">MARKA SAYISI</div>
+                <div class="card-content text-white text-center" style="font-size:30px">@ViewBag.deger6</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6 kolon">
+            <div class="card p-4 bg-secondary" >
+                <div class="card-title text-center text-white" style="font-size:20px">KRİTİK SEVİYE</div>
+                <div class="card-content text-white text-center" style="font-size:30px">@ViewBag.deger7</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6 kolon">
+            <div class="card p-4 bg-dark" >
+                <div class="card-title text-center text-white" style="font-size:20px">MAX FİYATLI ÜRÜN</div>
+                <div class="card-content text-white text-center" style="font-size:30px">@ViewBag.deger8</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6 kolon">
+            <div class="card p-4 bg-warning" >
+                <div class="card-title text-center text-white" style="font-size:20px">MİN FİYATLI ÜRÜN</div>
+                <div class="card-content text-white text-center" style="font-size:20px">@ViewBag.deger9</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6 kolon">
+            <div class="card p-4 bg-success" >
+                <div class="card-title text-center text-white" style="font-size:20px">MAX MARKA</div>
+                <div class="card-content text-white text-center" style="font-size:30px">@ViewBag.deger10</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6 kolon">
+            <div class="card p-4 bg-primary" >
+                <div class="card-title text-center text-white" style="font-size:20px">BUZDOLABI SAYISI</div>
+                <div class="card-content text-white text-center" style="font-size:30px">@ViewBag.deger11</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6 kolon">
+            <div class="card p-4 bg-danger" >
+                <div class="card-title text-center text-white" style="font-size:20px"> LAPTOP SAYISI</div>
+                <div class="card-content text-white text-center" style="font-size:30px">@ViewBag.deger12</div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-3 col-md-6 col-sm-6 kolon">
+            <div class="card p-4 bg-dark" >
+                <div class="card-title text-center text-white" style="font-size:20px"> EN ÇOK SATAN</div>
+                <div class="card-content text-white text-center" style="font-size:30px">@ViewBag.deger13</div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-3 col-md-6 col-sm-6 kolon">
+            <div class="card p-4 bg-warning bg-gradient" >
+                <div class="card-title text-center text-white" style="font-size:20px">KASADAKİ TUTAR</div>
+                <div class="card-content text-white text-center" style="font-size:30px">@ViewBag.deger14</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6 kolon">
+            <div class="card p-4 bg-info bg-gradient" >
+                <div class="card-title text-center text-white" style="font-size:20px">BUGÜNKÜ SATIŞLAR</div>
+                <div class="card-content text-white text-center" style="font-size:30px">@ViewBag.deger15</div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-3 col-md-6 col-sm-6 kolon">
+            <div class="card p-4" style="background-color:orange;" >
+                <div class="card-title text-center text-white" style="font-size:20px">BUGÜNKÜ KASA</div>
+                <div class="card-content text-white text-center" style="font-size:30px">@ViewBag.deger16</div>
+            </div>
+        </div>
+    </div>
+</div>

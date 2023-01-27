@@ -1,0 +1,78 @@
+﻿@using mvcOnlineTicariOtomasyon.Models.siniflar
+@model List<Faturalar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="my-4">FATURA LİSTESİ</h2>
+
+<table class="table table-striped table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>SERİ SIRA NO</th>
+            <th>TARİH</th>
+            <th>SAAT</th>
+            <th>TOPLAM</th>
+            <th>GÜNCELLE</th>
+            <th>DETAYLAR</th>
+            <th>YENİ KALEM</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var x in Model)
+        {
+        <tr>
+            <td>@x.FaturaSeriNo @x.FaturaSıraNo</td>
+            <td>@Convert.ToDateTime(x.Tarih).ToString("dd/MM/yyyy")</td>
+
+            <td>@x.Saat</td>
+            <th>@x.Toplam ₺</th>
+
+            <td><a href="/Faturalar/faturaGetir/@x.Faturaid" class="btn btn-warning text-white">GÜNCELLE</a></td>
+            <td><a href="/Faturalar/faturaKalem/@x.Faturaid" class="btn btn-primary">DETAYLAR</a></td>
+            
+            <td><a href="#" class="btn btn-success">KALEM</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Faturalar/faturaEkle" class="btn btn-primary">YENİ FATURA EKLE</a>
+<br /><br />
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal1">POPUP PENCERESİ</button>
+
+<div class="modal" id="modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">POPUP DİYALOG EKRANI</div>
+            </div>
+
+            <div class="modal-body">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>SERİ SIRA NO </th>
+                            <th>SIRA NO </th>
+                            <th>TOPLAM</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach(var x in Model)
+                        {
+                        <tr>
+                            <td>@x.FaturaSeriNo</td>
+                            <td>@x.FaturaSıraNo</td>
+                            <td>@x.Toplam ₺</td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+
+                <button class="btn btn-danger" data-dismiss="modal">TAMAM</button>
+            </div>
+        </div>
+    </div>
+</div>
